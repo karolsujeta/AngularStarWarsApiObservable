@@ -1,0 +1,28 @@
+<div class="main">
+
+    <!-- <div class="input">
+        <input class="input__btn" placeholder="Wprowadź filtr">
+    </div> -->
+
+    <div class="results">
+
+        <button class="results__btn" (click)="showData()">Pokaż wyniki!</button>
+
+        <table class="results__table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Populace</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of datas">
+                    <td>{{data.name}}</td>
+                    <td>{{data.populace}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
