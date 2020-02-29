@@ -14,18 +14,16 @@ export class DataService {
 
   api = "https://swapi.co/api/planets/3/";
 
-  downloadData() {
-    return this.http.get(this.api)
+  downloadData(): Observable<DataInterface[]> {
+    return this.http
+      .get(this.api)
       .pipe(
-        map((data: any[]) => {
-          // return data;
-          data.map(
-            (item: any) => new DataInterface(item.name, item.populace)
-          );
-        }),
-        catchError(error => {
-          return throwError("Coś poszło nie tak");
-        })
-      )
+        map((data: any[]) =>
+          [data].map(
+            (item: any) =>
+              new DataInterface(item.name, item.population, item.climate)
+          )
+        )
+      );
   }
 }
