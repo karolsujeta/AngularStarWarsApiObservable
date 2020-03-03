@@ -16,9 +16,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let data of datas | async">
-                    <td>{{data.name}}</td>
-                    <td>{{data.population}}</td>
+                <tr *ngFor="let item of datas| async">
+                    <td>{{item.name}}</td>
+                    <td>{{item.population}}</td>
                 </tr>
             </tbody>
         </table>
